@@ -98,7 +98,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(ProjectDir)LoadFiles\SQFHeader.txt $(TargetDir)
-copy $(ProjectDir)LoadFiles\Minimum.txt $(TargetDir)</PostBuildEvent>
+copy $(ProjectDir)LoadFiles\Minimum.txt $(TargetDir)
+copy $(ProjectDir)ReadMe.txt $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
