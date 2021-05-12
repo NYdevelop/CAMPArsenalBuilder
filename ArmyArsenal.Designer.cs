@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxArmyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listArsenal = new System.Windows.Forms.ListBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.textBoxAdd = new System.Windows.Forms.TextBox();
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.btnRemoveOne = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxAdd = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxArmyName
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 19);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textBoxArmyName.Location = new System.Drawing.Point(65, 1);
+            this.textBoxArmyName.Name = "textBoxArmyName";
+            this.textBoxArmyName.Size = new System.Drawing.Size(180, 19);
+            this.textBoxArmyName.TabIndex = 0;
+            this.textBoxArmyName.Leave += new System.EventHandler(this.textBoxArmyName_Leave);
             // 
             // label1
             // 
@@ -58,28 +61,10 @@
             // 
             this.listArsenal.FormattingEnabled = true;
             this.listArsenal.ItemHeight = 12;
-            this.listArsenal.Location = new System.Drawing.Point(3, 55);
+            this.listArsenal.Location = new System.Drawing.Point(3, 91);
             this.listArsenal.Name = "listArsenal";
-            this.listArsenal.Size = new System.Drawing.Size(242, 220);
+            this.listArsenal.Size = new System.Drawing.Size(242, 184);
             this.listArsenal.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(3, 25);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 23);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "追加";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // textBoxAdd
-            // 
-            this.textBoxAdd.Location = new System.Drawing.Point(65, 27);
-            this.textBoxAdd.Name = "textBoxAdd";
-            this.textBoxAdd.Size = new System.Drawing.Size(180, 19);
-            this.textBoxAdd.TabIndex = 4;
-            this.textBoxAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // btnRemoveAll
             // 
@@ -101,19 +86,57 @@
             this.btnRemoveOne.UseVisualStyleBackColor = true;
             this.btnRemoveOne.Click += new System.EventHandler(this.btnRemoveOne_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 12);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "追加済みリスト";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxAdd);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(242, 45);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "クラス追加欄";
+            // 
+            // textBoxAdd
+            // 
+            this.textBoxAdd.Location = new System.Drawing.Point(6, 18);
+            this.textBoxAdd.Name = "textBoxAdd";
+            this.textBoxAdd.Size = new System.Drawing.Size(185, 19);
+            this.textBoxAdd.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "追加";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ArmyArsenal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRemoveOne);
             this.Controls.Add(this.btnRemoveAll);
-            this.Controls.Add(this.textBoxAdd);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.listArsenal);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxArmyName);
             this.Name = "ArmyArsenal";
             this.Size = new System.Drawing.Size(367, 283);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,12 +144,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxArmyName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listArsenal;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBoxAdd;
         private System.Windows.Forms.Button btnRemoveAll;
         private System.Windows.Forms.Button btnRemoveOne;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBoxAdd;
+        private System.Windows.Forms.Button button1;
     }
 }

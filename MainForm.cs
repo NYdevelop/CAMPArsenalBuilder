@@ -21,7 +21,12 @@ namespace CAMPArsenalBuilder
             {
                 if (item == str)
                 {
-                    MessageBox.Show(this, "重複しています\n項目名：" + item, "重複", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        this,
+                        "既に追加済みです\n共通装備\n項目名：" + item,
+                        "重複",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
             }

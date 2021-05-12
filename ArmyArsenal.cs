@@ -15,17 +15,17 @@ namespace CAMPArsenalBuilder
 
         public KeyValuePair<string, ListBox.ObjectCollection> GetProparty()
         {
-            return new KeyValuePair<string, ListBox.ObjectCollection>(textBox1.Text, listArsenal.Items);
+            return new KeyValuePair<string, ListBox.ObjectCollection>(textBoxArmyName.Text, listArsenal.Items);
         }
 
         public void SetName(string name)
         {
-            textBox1.Text = name;
+            textBoxArmyName.Text = name;
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void textBoxArmyName_Leave(object sender, EventArgs e)
         {
-            EventLeaveArmyName.Invoke(this, textBox1.Text);
+            EventLeaveArmyName.Invoke(this, textBoxArmyName.Text);
         }
 
         public void AddList(string str)
@@ -35,7 +35,12 @@ namespace CAMPArsenalBuilder
             {
                 if (item == str)
                 {
-                    MessageBox.Show(this, "重複しています\n項目名：" + item, "重複", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(
+                        this,
+                        "既に追加済みです\n兵科：" + textBoxArmyName.Text + "\n項目名：" + item,
+                        "重複",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -62,7 +67,7 @@ namespace CAMPArsenalBuilder
             listArsenal.Items.Clear();
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxAdd_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
