@@ -1,0 +1,18 @@
+﻿// Arsenal by Military Department script by towa ft. size-chura
+// 2020/11/08
+//
+//兵科ごとに表示する項目を変更するACEアーセナルスクリプトです.
+//ボックスをアーセナル化するのではなく、アクションを実行したプレイヤーのロール名を読み取って分岐処理してプレイヤーにアーセナルを表示します.
+// (2020/11/08 各ユニットへの変数追加は不要にしました)
+//
+//このスクリプトファイルを、ミッションフォルダ\scripts\に置いてください.
+//init欄に以下のように入力してください.(アクションを実行するのはこの箱である必要はない)
+// (2020/11/08 箱への命名も不要にしました)
+//
+//
+//[this, ""アーセナル"", """", """", ""true"", ""true"", {}, {}, {params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];_target execVM ""scripts\Arsenal_by_Military_Department_ver2.sqf"";}, {}, [], 2, nil, false, false] call BIS_fnc_holdActionAdd;
+//
+//
+// 注意事項
+// マルチプレイ時のみ動作動作確認
+//
