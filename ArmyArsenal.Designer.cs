@@ -50,7 +50,7 @@
             this.textBoxArmyName.Location = new System.Drawing.Point(65, 1);
             this.textBoxArmyName.Name = "textBoxArmyName";
             this.textBoxArmyName.Size = new System.Drawing.Size(180, 19);
-            this.textBoxArmyName.TabIndex = 0;
+            this.textBoxArmyName.TabIndex = 1;
             this.textBoxArmyName.Leave += new System.EventHandler(this.textBoxArmyName_Leave);
             // 
             // label1
@@ -59,7 +59,7 @@
             this.label1.Location = new System.Drawing.Point(12, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "兵科名：";
             // 
             // listArsenal
@@ -70,14 +70,14 @@
             this.listArsenal.Name = "listArsenal";
             this.listArsenal.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listArsenal.Size = new System.Drawing.Size(242, 184);
-            this.listArsenal.TabIndex = 2;
+            this.listArsenal.TabIndex = 4;
             // 
             // btnRemoveAll
             // 
             this.btnRemoveAll.Location = new System.Drawing.Point(262, 120);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoveAll.TabIndex = 5;
+            this.btnRemoveAll.TabIndex = 6;
             this.btnRemoveAll.Text = "全て除去";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
             this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
@@ -98,7 +98,7 @@
             this.label3.Location = new System.Drawing.Point(3, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 12);
-            this.label3.TabIndex = 20;
+            this.label3.TabIndex = 3;
             this.label3.Text = "追加済みリスト";
             // 
             // groupBox1
@@ -108,7 +108,7 @@
             this.groupBox1.Location = new System.Drawing.Point(3, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(242, 45);
-            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "クラス追加欄";
             // 
@@ -117,14 +117,14 @@
             this.textBoxAdd.Location = new System.Drawing.Point(6, 18);
             this.textBoxAdd.Name = "textBoxAdd";
             this.textBoxAdd.Size = new System.Drawing.Size(185, 19);
-            this.textBoxAdd.TabIndex = 9;
+            this.textBoxAdd.TabIndex = 0;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(197, 16);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(39, 23);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -137,7 +137,7 @@
             this.grpCopy.Location = new System.Drawing.Point(251, 185);
             this.grpCopy.Name = "grpCopy";
             this.grpCopy.Size = new System.Drawing.Size(113, 90);
-            this.grpCopy.TabIndex = 21;
+            this.grpCopy.TabIndex = 7;
             this.grpCopy.TabStop = false;
             this.grpCopy.Text = "コピー";
             // 
@@ -146,7 +146,7 @@
             this.btnCopy.Location = new System.Drawing.Point(6, 60);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(101, 23);
-            this.btnCopy.TabIndex = 6;
+            this.btnCopy.TabIndex = 2;
             this.btnCopy.Text = "コピー";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
