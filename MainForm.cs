@@ -35,6 +35,7 @@ namespace CAMPArsenalBuilder
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxAdd.Text)) return;
             AddList(textBoxAdd.Text);
             textBoxAdd.Clear();
         }
@@ -44,13 +45,12 @@ namespace CAMPArsenalBuilder
             listArsenal.Items.Clear();
         }
 
-        private void btnRemoveOne_Click(object sender, EventArgs e)
+        private void btnRemoveSelect_Click(object sender, EventArgs e)
         {
-            if (listArsenal.SelectedItem == null) return;
-            var index = listArsenal.SelectedIndex;
-            listArsenal.Items.Remove(listArsenal.SelectedItem);
-            if (listArsenal.Items.Count != index) listArsenal.SelectedIndex = index;
-            else listArsenal.SelectedIndex = index - 1;
+            while (listArsenal.SelectedItems.Count != 0)
+            {
+                listArsenal.Items.Remove(listArsenal.SelectedItems[0]);
+            }
         }
 
         private void btnLoadMinimum_Click(object sender, EventArgs e)

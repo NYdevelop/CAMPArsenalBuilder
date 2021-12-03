@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnAddArmy = new System.Windows.Forms.Button();
-            this.btnRemoveOne = new System.Windows.Forms.Button();
+            this.btnRemoveSelect = new System.Windows.Forms.Button();
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.textBoxAdd = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -62,15 +62,15 @@
             this.btnAddArmy.UseVisualStyleBackColor = true;
             this.btnAddArmy.Click += new System.EventHandler(this.btnAddArmy_Click);
             // 
-            // btnRemoveOne
+            // btnRemoveSelect
             // 
-            this.btnRemoveOne.Location = new System.Drawing.Point(272, 235);
-            this.btnRemoveOne.Name = "btnRemoveOne";
-            this.btnRemoveOne.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoveOne.TabIndex = 10;
-            this.btnRemoveOne.Text = "選択を除去";
-            this.btnRemoveOne.UseVisualStyleBackColor = true;
-            this.btnRemoveOne.Click += new System.EventHandler(this.btnRemoveOne_Click);
+            this.btnRemoveSelect.Location = new System.Drawing.Point(272, 235);
+            this.btnRemoveSelect.Name = "btnRemoveSelect";
+            this.btnRemoveSelect.Size = new System.Drawing.Size(90, 23);
+            this.btnRemoveSelect.TabIndex = 10;
+            this.btnRemoveSelect.Text = "選択を除去";
+            this.btnRemoveSelect.UseVisualStyleBackColor = true;
+            this.btnRemoveSelect.Click += new System.EventHandler(this.btnRemoveSelect_Click);
             // 
             // btnRemoveAll
             // 
@@ -106,6 +106,7 @@
             this.listArsenal.ItemHeight = 12;
             this.listArsenal.Location = new System.Drawing.Point(12, 103);
             this.listArsenal.Name = "listArsenal";
+            this.listArsenal.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listArsenal.Size = new System.Drawing.Size(236, 184);
             this.listArsenal.TabIndex = 7;
             // 
@@ -222,7 +223,7 @@
             this.Controls.Add(this.tabControlArmy);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnLoadScript);
-            this.Controls.Add(this.btnRemoveOne);
+            this.Controls.Add(this.btnRemoveSelect);
             this.Controls.Add(this.btnRemoveAll);
             this.Controls.Add(this.listArsenal);
             this.Controls.Add(this.label1);
@@ -244,7 +245,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddArmy;
-        private System.Windows.Forms.Button btnRemoveOne;
+        private System.Windows.Forms.Button btnRemoveSelect;
         private System.Windows.Forms.Button btnRemoveAll;
         private System.Windows.Forms.TextBox textBoxAdd;
         private System.Windows.Forms.Button btnAdd;

@@ -51,6 +51,7 @@ namespace CAMPArsenalBuilder
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxAdd.Text)) return;
             AddList(textBoxAdd.Text);
             textBoxAdd.Clear();
         }
@@ -80,6 +81,8 @@ namespace CAMPArsenalBuilder
 
         private void cbxCopy_DropDown(object sender, EventArgs e)
         {
+            cbxCopy.Items.Clear();
+
             List<string> ret = new List<string>();
             var tabs = parentForm.GetTabs();
             foreach (Control item in tabs)

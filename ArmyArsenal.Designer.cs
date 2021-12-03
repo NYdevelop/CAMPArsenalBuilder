@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxAdd = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.grpCopy = new System.Windows.Forms.GroupBox();
             this.btnCopy = new System.Windows.Forms.Button();
             this.cbxCopy = new System.Windows.Forms.ComboBox();
@@ -104,7 +104,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxAdd);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Location = new System.Drawing.Point(3, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(242, 45);
@@ -119,14 +119,15 @@
             this.textBoxAdd.Size = new System.Drawing.Size(185, 19);
             this.textBoxAdd.TabIndex = 9;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(197, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(197, 16);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(39, 23);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "追加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grpCopy
             // 
@@ -146,7 +147,7 @@
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(101, 23);
             this.btnCopy.TabIndex = 6;
-            this.btnCopy.Text = "移動";
+            this.btnCopy.Text = "コピー";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
@@ -201,7 +202,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxAdd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpCopy;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.ComboBox cbxCopy;
