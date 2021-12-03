@@ -88,7 +88,7 @@ namespace CAMPArsenalBuilder
 
         private ArmyArsenal AddArmy(string name)
         {
-            var ctrl = new ArmyArsenal();
+            var ctrl = new ArmyArsenal(this);
             ctrl.SetName(name);
 
             var page = new TabPage();
@@ -364,6 +364,11 @@ if ([_roleVar, _thisRole, true] call BIS_fnc_inString) exitWith {
                 ret = src.Substring(0, comment);
             }
             return ret;
+        }
+
+        public Control.ControlCollection GetTabs ()
+        {
+            return tabControlArmy.Controls;
         }
         #endregion
 

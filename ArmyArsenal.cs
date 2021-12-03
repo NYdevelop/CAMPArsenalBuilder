@@ -7,10 +7,12 @@ namespace CAMPArsenalBuilder
     public partial class ArmyArsenal : UserControl
     {
         public event EventHandler<string> EventLeaveArmyName;
+        private MainForm parentForm = null;
 
-        public ArmyArsenal()
+        public ArmyArsenal(MainForm form)
         {
             InitializeComponent();
+            parentForm = form;
         }
 
         public KeyValuePair<string, ListBox.ObjectCollection> GetProparty()
@@ -53,18 +55,18 @@ namespace CAMPArsenalBuilder
             textBoxAdd.Clear();
         }
 
-        private void btnRemoveOne_Click(object sender, EventArgs e)
+        private void btnRemoveSelect_Click(object sender, EventArgs e)
         {
-            if (listArsenal.SelectedItem == null) return;
-            var index = listArsenal.SelectedIndex;
-            listArsenal.Items.Remove(listArsenal.SelectedItem);
-            if (listArsenal.Items.Count != index) listArsenal.SelectedIndex = index;
-            else listArsenal.SelectedIndex = index - 1;
+            while(listArsenal.SelectedItems.Count != 0)
+            {
+                listArsenal.Items.Remove(listArsenal.SelectedItems[0]);
+            }
         }
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-            listArsenal.Items.Clear();
+            var ret = MessageBox.Show(this, "全削除してよろしいですか？", "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (ret == DialogResult.OK) listArsenal.Items.Clear();
         }
 
         private void textBoxAdd_KeyPress(object sender, KeyPressEventArgs e)
@@ -73,6 +75,39 @@ namespace CAMPArsenalBuilder
             {
                 AddList(textBoxAdd.Text);
                 textBoxAdd.Clear();
+            }
+        }
+
+        private void cbxCopy_DropDown(object sender, EventArgs e)
+        {
+            List<string> ret = new List<string>();
+            var tabs = parentForm.GetTabs();
+            foreach (Control item in tabs)
+            {
+                ret.Add(item.Text);
+            }
+            cbxCopy.Items.AddRange(ret.ToArray());
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbxCopy.Text)) return;
+            if (listArsenal.SelectedItems.Count == 0) return;
+
+            ArmyArsenal copyTo = null;
+            var tabs = parentForm.GetTabs();
+            foreach (TabPage item in tabs)
+            {
+                if (item.Text == cbxCopy.Text)
+                {
+                    copyTo = (ArmyArsenal)item.Controls[0];
+                    break;
+                }
+            }
+
+            foreach (var item in listArsenal.SelectedItems)
+            {
+                copyTo.AddList(item.ToString());
             }
         }
     }
