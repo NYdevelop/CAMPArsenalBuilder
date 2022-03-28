@@ -118,6 +118,7 @@
             this.textBoxAdd.Name = "textBoxAdd";
             this.textBoxAdd.Size = new System.Drawing.Size(185, 19);
             this.textBoxAdd.TabIndex = 0;
+            this.textBoxAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAdd_KeyPress);
             // 
             // btnAdd
             // 

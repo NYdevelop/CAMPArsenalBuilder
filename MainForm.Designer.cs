@@ -232,7 +232,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "C.A.M.P. Arsenal Builder v1.1";
+            this.Text = "C.A.M.P. Arsenal Builder v1.2.2";
             this.contextMenuStripTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

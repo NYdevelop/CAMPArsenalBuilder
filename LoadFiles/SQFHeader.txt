@@ -10,7 +10,7 @@
 // (2020/11/08 箱への命名も不要にしました)
 //
 //
-//[this, ""アーセナル"", """", """", ""true"", ""true"", {}, {}, {params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];_target execVM ""scripts\Arsenal_by_Military_Department_ver2.sqf"";}, {}, [], 2, nil, false, false] call BIS_fnc_holdActionAdd;
+//[this, "アーセナル", "", "", "true", "true", {}, {}, {params ["_target", "_caller", "_actionId", "_arguments"];_target execVM "scripts\Arsenal_by_Military_Department_ver2.sqf";}, {}, [], 2, nil, false, false] call BIS_fnc_holdActionAdd;
 //
 //
 // 注意事項
