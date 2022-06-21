@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>size.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +66,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="ReadMe.txt" />
+    <Content Include="size.ico" />
     <EmbeddedResource Include="ArmyArsenal.resx">
       <DependentUpon>ArmyArsenal.cs</DependentUpon>
       <SubType>Designer</SubType>

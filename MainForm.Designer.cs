@@ -47,6 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGearLoadScript = new System.Windows.Forms.Button();
             this.contextMenuStripTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +58,7 @@
             this.btnAddArmy.Location = new System.Drawing.Point(12, 309);
             this.btnAddArmy.Name = "btnAddArmy";
             this.btnAddArmy.Size = new System.Drawing.Size(75, 23);
-            this.btnAddArmy.TabIndex = 9;
+            this.btnAddArmy.TabIndex = 10;
             this.btnAddArmy.Text = "兵科追加";
             this.btnAddArmy.UseVisualStyleBackColor = true;
             this.btnAddArmy.Click += new System.EventHandler(this.btnAddArmy_Click);
@@ -67,7 +68,7 @@
             this.btnRemoveSelect.Location = new System.Drawing.Point(272, 235);
             this.btnRemoveSelect.Name = "btnRemoveSelect";
             this.btnRemoveSelect.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoveSelect.TabIndex = 7;
+            this.btnRemoveSelect.TabIndex = 8;
             this.btnRemoveSelect.Text = "選択を除去";
             this.btnRemoveSelect.UseVisualStyleBackColor = true;
             this.btnRemoveSelect.Click += new System.EventHandler(this.btnRemoveSelect_Click);
@@ -77,7 +78,7 @@
             this.btnRemoveAll.Location = new System.Drawing.Point(272, 264);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoveAll.TabIndex = 8;
+            this.btnRemoveAll.TabIndex = 9;
             this.btnRemoveAll.Text = "全て除去";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
             this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
@@ -123,9 +124,9 @@
             // 
             this.btnLoadScript.Location = new System.Drawing.Point(299, 98);
             this.btnLoadScript.Name = "btnLoadScript";
-            this.btnLoadScript.Size = new System.Drawing.Size(63, 39);
+            this.btnLoadScript.Size = new System.Drawing.Size(63, 49);
             this.btnLoadScript.TabIndex = 6;
-            this.btnLoadScript.Text = "スクリプト読み込み";
+            this.btnLoadScript.Text = "Arsenal\r\nスクリプト\r\n読み込み";
             this.btnLoadScript.UseVisualStyleBackColor = true;
             this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
             // 
@@ -146,7 +147,7 @@
             this.tabControlArmy.Name = "tabControlArmy";
             this.tabControlArmy.SelectedIndex = 0;
             this.tabControlArmy.Size = new System.Drawing.Size(372, 303);
-            this.tabControlArmy.TabIndex = 11;
+            this.tabControlArmy.TabIndex = 12;
             // 
             // contextMenuStripTab
             // 
@@ -168,7 +169,7 @@
             this.label2.Location = new System.Drawing.Point(103, 314);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 12);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 11;
             this.label2.Text = "※上級兵科を左に";
             // 
             // btnLoadMinimum
@@ -210,11 +211,22 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // btnGearLoadScript
+            // 
+            this.btnGearLoadScript.Location = new System.Drawing.Point(299, 153);
+            this.btnGearLoadScript.Name = "btnGearLoadScript";
+            this.btnGearLoadScript.Size = new System.Drawing.Size(63, 49);
+            this.btnGearLoadScript.TabIndex = 7;
+            this.btnGearLoadScript.Text = "初期装備\r\nスクリプト\r\n読み込み";
+            this.btnGearLoadScript.UseVisualStyleBackColor = true;
+            this.btnGearLoadScript.Click += new System.EventHandler(this.btnGearLoadScript_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 643);
+            this.Controls.Add(this.btnGearLoadScript);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
@@ -232,7 +244,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "C.A.M.P. Arsenal Builder v1.2.2";
+            this.Text = "C.A.M.P. Arsenal Builder v1.3";
             this.contextMenuStripTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -261,6 +273,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnGearLoadScript;
     }
 }
 

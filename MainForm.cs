@@ -110,6 +110,7 @@ namespace CAMPArsenalBuilder
         enum ELoadState
         {
             none = 0,
+            findArmy,
             array,
         }
 
@@ -229,6 +230,139 @@ namespace CAMPArsenalBuilder
                 else ctrl.AddList(item);
             }
             return false;
+        }
+        #endregion
+
+        #region LoadGearScript
+        private void processLine(string line, ref ArmyArsenal ctrl, ref ELoadState state)
+        {
+            switch (state)
+            {
+                case ELoadState.none:
+                    {
+                        var find = line.IndexOf("_roleVar");
+                        if (find == -1)
+                        {
+                            find = line.IndexOf("_commonItem");
+                            if (find == -1) return;  // 何もしない
+
+                            // 共通装備読込
+                            state = ELoadState.findArmy;
+                            return;
+                        }
+
+                        // 各兵科読込
+                        var armyString = line.Split('\"')[1];
+                        ctrl = AddArmy(armyString);
+
+                        state = ELoadState.findArmy;
+                    }
+                    break;
+
+                case ELoadState.findArmy:
+                    {
+                        var find = line.IndexOf("{");
+                        if (find == -1) return;
+
+                        state = ELoadState.array;
+                    }
+                    break;
+
+                case ELoadState.array:
+                    {
+                        var find = line.IndexOf("}");
+                        if (find == 0)
+                        {
+                            ctrl = null;
+                            state = ELoadState.none;
+                            return;
+                        }
+
+                        var splitStr = line.Split('\"');
+                        if (splitStr.Length <= 2) return;
+
+                        var className = (splitStr.Length > 3) ? splitStr[3] : splitStr[1];
+
+                        if (ctrl == null)
+                        {
+                            AddList(className);
+                        }
+                        else
+                        {
+                            ctrl.AddList(className);
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void LoadGearScript(StreamReader sr)
+        {
+            ELoadState state = ELoadState.none;
+            ArmyArsenal ctrl = null;
+            while (sr.EndOfStream == false)
+            {
+                var line = sr.ReadLine();
+
+                line = RemoveComment(line);
+                if (line == "") continue;
+
+                processLine(line, ref ctrl, ref state);
+            }
+        }
+
+        private void btnGearLoadScript_Click(object sender, EventArgs e)
+        {
+            var loadFileDiag = new OpenFileDialog();
+            loadFileDiag.Filter = "sqfファイル(*.sqf)|*.sqf";
+            loadFileDiag.FileOk += (o, ev) =>
+            {
+                // 準備
+                if (tabControlArmy.Controls.Count > 0)
+                {
+                    var ret = MessageBox.Show(
+                        this,
+                        "既に兵科が追加されていますが、全削除しますか？",
+                        "兵科確認",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (ret == DialogResult.Yes)
+                    {
+                        tabControlArmy.Controls.Clear();
+                    }
+                }
+
+                // 読込
+                using (var sr = new StreamReader(loadFileDiag.OpenFile()))
+                {
+                    try
+                    {
+                        LoadGearScript(sr);
+                    }
+                    catch (Exception ex)
+                    {
+                        using (var sw = new StreamWriter("log.txt", false))
+                        {
+                            sw.WriteLine(ex.Message);
+                            sw.WriteLine(ex.InnerException);
+                            sw.WriteLine(ex.StackTrace);
+                            sw.WriteLine();
+                        }
+                        MessageBox.Show(
+                            this,
+                            "読込エラーが発生しました\n下記2つをtowaに送付してもらえると解析します\n・読み込んだsqfファイル\n・exeフォルダに出力されたlog.txt",
+                            "読込エラー",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+            };
+
+            loadFileDiag.ShowDialog(this);
         }
         #endregion
 
