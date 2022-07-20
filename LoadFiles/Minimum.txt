@@ -7,6 +7,7 @@
 "ACE_tourniquet",    // 止血帯
 "ACE_splint",        // 添え木
 
+"ACE_CableTie",      // ケーブルタイ
 "ACE_MapTools",      // マップツール
 "ItemMap",           // 地図
 "ItemCompass",       // コンパス
@@ -16,3 +17,25 @@
 "rhs_mag_an_m8hc",   // ホワイトスモーク
 "rhs_mag_m18_green", // グリーンスモーク
 "ACE_M84",           // フラッシュバン
+
+"ACE_SpareBarrel",      //予備銃身
+"ACE_SpareBarrel_Item", //予備銃身
+
+"ACE_SpraypaintGreen", //スプレー
+"ACE_SpraypaintRed",   //スプレー
+"ACE_SpraypaintBlue",  //スプレー
+"ACE_SpraypaintBlack", //スプレー
+
+
+
+// 外してもよいもの
+"ACE_Flashlight_XL50",  // マグライト
+"ACE_Flashlight_MX991", // フルトンMX991
+"ACE_EntrenchingTool",  // シャベル
+"ACE_wirecutter",       // ワイヤーカッター
+"ACE_Kestrel4500",      // ケストレル
+"ACE_ATragMX",          // ATragMX
+"ACE_DefusalKit",       // 解除キット
+"ACE_RangeCard",        // 射表
+"ACE_artilleryTable",   // 火砲射表
+"ACE_RangeTable_82mm",  // 82mm射表
