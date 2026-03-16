@@ -58,6 +58,9 @@ by towa ft. size-chura
 
 
 // change log
+2026 / 03 16
+v1.4 Arsenal ver3対応
+
 2022 / 06 / 21
 v1.3 Tabキーでの入力欄移動しやすく整理、初期装備スクリプト読み込み
 
