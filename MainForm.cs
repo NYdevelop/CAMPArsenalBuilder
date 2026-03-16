@@ -371,7 +371,7 @@ namespace CAMPArsenalBuilder
         {
             var saveFile = new SaveFileDialog();
             saveFile.Filter = "sqfファイル(*.sqf)|*.sqf";
-            saveFile.FileName = "Arsenal_by_Military_Department_ver2";
+            saveFile.FileName = "Arsenal_by_Military_Department_ver3";
 
             saveFile.FileOk += (o, ev) =>
             {
@@ -416,7 +416,7 @@ _openBox =
 {
     BOX_01 = _this;
     [BOX_01, player] call ace_arsenal_fnc_openBox;
-    [BOX_01, true, false] call ace_arsenal_fnc_removeVirtualItems;
+    // [BOX_01, true, false] call ace_arsenal_fnc_removeVirtualItems;
 };"
             );
             #endregion
