@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace CAMPArsenalBuilder
@@ -30,23 +32,22 @@ namespace CAMPArsenalBuilder
             EventLeaveArmyName.Invoke(this, textBoxArmyName.Text);
         }
 
-        public void AddList(string str)
+        /// <summary>
+        /// アイテムクラス追加
+        /// </summary>
+        /// <returns>エラー無い場合null, エラー時エラー内容文字列</returns>
+        public string AddList(string str)
         {
             // 重複チェック
             foreach (string item in listArsenal.Items)
             {
                 if (item == str)
                 {
-                    MessageBox.Show(
-                        this,
-                        "既に追加済みです\n兵科：" + textBoxArmyName.Text + "\n項目名：" + item,
-                        "重複",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
+                    return "既に追加済み [" + textBoxArmyName.Text + "] 項目名：" + item;
                 }
             }
             listArsenal.Items.Add(str);
+            return null;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -113,5 +114,53 @@ namespace CAMPArsenalBuilder
                 copyTo.AddList(item.ToString());
             }
         }
+
+        private void listbox_MouseDown(object sender, MouseEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+
+            // アイテムがクリックされたか確認
+            if (listbox.SelectedItem == null) return;
+            listbox.DoDragDrop(listbox.SelectedItem, DragDropEffects.Move);
+        }
+
+        private void listbox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void listbox_DragDrop(object sender, DragEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            Point point = listbox.PointToClient(new Point(e.X, e.Y));
+            int index = listbox.IndexFromPoint(point);
+            if (index < 0) index = listbox.Items.Count - 1;
+
+            object data = e.Data.GetData(typeof(string));
+            listbox.Items.Remove(data);
+            listbox.Items.Insert(index, data);
+        }
+
+        private void listbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            var listbox = (ListBox)sender;
+            // Ctrl + C が押されたか判定
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                if (listbox.SelectedItems.Count > 0)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var item in listbox.SelectedItems)
+                    {
+                        sb.AppendLine(item.ToString());
+                    }
+                    // クリップボードにコピー
+                    var text = sb.ToString();
+                    Clipboard.SetText(text.Substring(0, text.Length - 1));
+                }
+                e.SuppressKeyPress = true; // システムのデフォルト挙動を無効化
+            }
+        }
+
     }
 }

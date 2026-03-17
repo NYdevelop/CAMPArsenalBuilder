@@ -64,6 +64,7 @@
             // 
             // listArsenal
             // 
+            this.listArsenal.AllowDrop = true;
             this.listArsenal.FormattingEnabled = true;
             this.listArsenal.ItemHeight = 12;
             this.listArsenal.Location = new System.Drawing.Point(3, 91);
@@ -71,6 +72,10 @@
             this.listArsenal.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listArsenal.Size = new System.Drawing.Size(242, 184);
             this.listArsenal.TabIndex = 4;
+            this.listArsenal.DragDrop += new System.Windows.Forms.DragEventHandler(this.listbox_DragDrop);
+            this.listArsenal.DragOver += new System.Windows.Forms.DragEventHandler(this.listbox_DragOver);
+            this.listArsenal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listbox_KeyDown);
+            this.listArsenal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listbox_MouseDown);
             // 
             // btnRemoveAll
             // 

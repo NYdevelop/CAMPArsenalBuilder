@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGearLoadScript = new System.Windows.Forms.Button();
+            this.lbxError = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.contextMenuStripTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +105,7 @@
             // 
             // listArsenal
             // 
+            this.listArsenal.AllowDrop = true;
             this.listArsenal.FormattingEnabled = true;
             this.listArsenal.ItemHeight = 12;
             this.listArsenal.Location = new System.Drawing.Point(12, 103);
@@ -110,6 +113,10 @@
             this.listArsenal.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listArsenal.Size = new System.Drawing.Size(236, 184);
             this.listArsenal.TabIndex = 3;
+            this.listArsenal.DragDrop += new System.Windows.Forms.DragEventHandler(this.listbox_DragDrop);
+            this.listArsenal.DragOver += new System.Windows.Forms.DragEventHandler(this.listbox_DragOver);
+            this.listArsenal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listbox_KeyDown);
+            this.listArsenal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listbox_MouseDown);
             // 
             // label1
             // 
@@ -221,16 +228,37 @@
             this.btnGearLoadScript.UseVisualStyleBackColor = true;
             this.btnGearLoadScript.Click += new System.EventHandler(this.btnGearLoadScript_Click);
             // 
+            // lbxError
+            // 
+            this.lbxError.FormattingEnabled = true;
+            this.lbxError.ItemHeight = 12;
+            this.lbxError.Location = new System.Drawing.Point(2, 662);
+            this.lbxError.Name = "lbxError";
+            this.lbxError.Size = new System.Drawing.Size(372, 76);
+            this.lbxError.TabIndex = 20;
+            this.lbxError.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 647);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 12);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "エラー表示";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 643);
+            this.ClientSize = new System.Drawing.Size(375, 740);
+            this.Controls.Add(this.lbxError);
             this.Controls.Add(this.btnGearLoadScript);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLoadMinimum);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControlArmy);
             this.Controls.Add(this.btnCreate);
@@ -244,7 +272,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "C.A.M.P. Arsenal Builder v1.4";
+            this.Text = "C.A.M.P. Arsenal Builder v1.4.1";
             this.contextMenuStripTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -274,6 +302,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGearLoadScript;
+        private System.Windows.Forms.ListBox lbxError;
+        private System.Windows.Forms.Label label4;
     }
 }
 
